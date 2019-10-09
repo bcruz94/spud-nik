@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SpudNik_PoCT.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{7E87CEF3-F057-4006-A8D2-D48F17DE1BDB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SpudNik_PoCT.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SpudNik_PoCTEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{2463DA83-1365-4889-9483-A282480A408C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\SpudNik_PoCT">
+      <UniqueIdentifier>{AA177F24-1EDE-4C16-BDF4-A5A8F09E54FA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SpudNik_PoCT\SpudNik_PoCT.Build.cs">
+      <Filter>Source\SpudNik_PoCT</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SpudNik_PoCT\SpudNik_PoCT.cpp">
+      <Filter>Source\SpudNik_PoCT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpudNik_PoCT\SpudNik_PoCT.h">
+      <Filter>Source\SpudNik_PoCT</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpudNik_PoCT\SpudNik_PoCTGameModeBase.cpp">
+      <Filter>Source\SpudNik_PoCT</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpudNik_PoCT\SpudNik_PoCTGameModeBase.h">
+      <Filter>Source\SpudNik_PoCT</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

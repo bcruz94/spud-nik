@@ -1,0 +1,7 @@
+F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\Definitions.SpudNik_PoCT.h
+f:\storage\spudnik\spud-nik\spudnik_poct\source\spudnik_poct\SpudNik_PoCTGameModeBase.h
+F:\Storage\Unreal\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+F:\Storage\Unreal\UE_4.22\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+F:\Storage\Unreal\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+F:\Storage\Unreal\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Inc\SpudNik_PoCT\SpudNik_PoCTGameModeBase.generated.h
