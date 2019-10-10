@@ -1,3 +1,0 @@
-F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\Definitions.SpudNik_PoCT.h
-F:\Storage\Unreal\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-F:\Storage\Unreal\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h

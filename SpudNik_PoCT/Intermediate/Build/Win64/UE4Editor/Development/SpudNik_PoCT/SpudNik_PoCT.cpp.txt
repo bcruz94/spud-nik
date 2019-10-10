@@ -1,2 +1,0 @@
-F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\Definitions.SpudNik_PoCT.h
-f:\storage\spudnik\spud-nik\spudnik_poct\source\spudnik_poct\SpudNik_PoCT.h
