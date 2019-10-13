@@ -28,9 +28,9 @@
 /wd4838
 /we4668
 /I .
-/I F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Inc\SpudNik_PoCT
-/I F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Source
-/I F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Source\SpudNik_PoCT
+/I C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Inc\SpudNik_PoCT
+/I C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Source
+/I C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Source\SpudNik_PoCT
 /I Runtime
 /I Runtime\Core\Public
 /I Runtime\Core
@@ -429,17 +429,20 @@
 /I ThirdParty
 /I ThirdParty\libSampleRate\Public
 /I ThirdParty\libSampleRate
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"
-/FI"F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\SpudNik_PoCTEditor\Development\Engine\SharedPCH.Engine.h"
-/Yu"F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\SpudNik_PoCTEditor\Development\Engine\SharedPCH.Engine.h"
-/Fp"F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\SpudNik_PoCTEditor\Development\Engine\SharedPCH.Engine.h.pch"
-"F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Source\SpudNik_PoCT\SpudNik_PoCTGameModeBase.cpp"
-/FI"F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\Definitions.SpudNik_PoCT.h"
-/Fo"F:\Storage\SpudNik\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\SpudNik_PoCTGameModeBase.cpp.obj"
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
+/I Runtime\AugmentedReality\Public
+/I Runtime\AugmentedReality
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+/FI"C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\SpudNik_PoCTEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\SpudNik_PoCTEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\SpudNik_PoCTEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Source\SpudNik_PoCT\SpudNik_PoCTGameModeBase.cpp"
+/FI"C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\Definitions.SpudNik_PoCT.h"
+/Fo"C:\Users\Sigmund\Desktop\Temp\spud-nik\SpudNik_PoCT\Intermediate\Build\Win64\UE4Editor\Development\SpudNik_PoCT\SpudNik_PoCTGameModeBase.cpp.obj"
 /TP
 /GR-
 /W4
