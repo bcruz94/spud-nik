@@ -24,7 +24,8 @@ ACPP_DemoCharacter::ACPP_DemoCharacter()
 	SpringArm->SetupAttachment((USceneComponent*)GetCapsuleComponent());
 
 	FVector armLocation(3.1012802f, 0.0f, 9.5177116f);
-	FRotator armRotation(0.0f, -50.0f, 0.0f);
+	FRotator armRotation(-50.0f, 0.0f, 0.0f);
+	FVector meshLocation(0.0f, 0.0f, -80.0f);
 
 	SpringArm->SetRelativeLocationAndRotation(armLocation, armRotation);
 	SpringArm->TargetArmLength = 708.0245361f;
@@ -37,6 +38,7 @@ ACPP_DemoCharacter::ACPP_DemoCharacter()
 
 	CharacterMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CharacterMesh"));
 	CharacterMesh->SetupAttachment((USceneComponent*)GetCapsuleComponent());
+	CharacterMesh->SetRelativeLocation(meshLocation);
 }
 
 // Called when the game starts or when spawned
@@ -44,6 +46,12 @@ void ACPP_DemoCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	if (socketOffset.IsZero() || socketOffset.IsNearlyZero())
+	{
+		socketOffset.X = 0.0f;
+		socketOffset.Y = 0.0f;
+		socketOffset.Z = -130.0f;
+	}
 }
 
 // Called every frame
@@ -75,7 +83,7 @@ bool ACPP_DemoCharacter::CanBeSeenFrom(const FVector& ObserverLocation, FVector&
 	{
 		OutSeenLocation = socketPosition;
 		OutSightStrength = 1;
-		GEngine->AddOnScreenDebugMessage(1, 0.2f, FColor::Blue, FString::Printf(TEXT("Socket: %s"), *socketPosition.ToString()));
+		//GEngine->AddOnScreenDebugMessage(1, 0.2f, FColor::Blue, FString::Printf(TEXT("Socket: %s"), *socketPosition.ToString()));
 		//UE_LOG(LogTemp, Warning, TEXT("SocketTrue"));
 		return true;
 	}
@@ -84,7 +92,7 @@ bool ACPP_DemoCharacter::CanBeSeenFrom(const FVector& ObserverLocation, FVector&
 	{
 		OutSeenLocation = GetActorLocation();
 		OutSightStrength = 1;
-		GEngine->AddOnScreenDebugMessage(1, 0.2f, FColor::Blue, FString::Printf(TEXT("Actor: %s"), *socketPosition.ToString()));
+		//GEngine->AddOnScreenDebugMessage(1, 0.2f, FColor::Blue, FString::Printf(TEXT("Actor: %s"), *socketPosition.ToString()));
 		//UE_LOG(LogTemp, Warning, TEXT("ActorTrue"));
 		return true;
 	}
