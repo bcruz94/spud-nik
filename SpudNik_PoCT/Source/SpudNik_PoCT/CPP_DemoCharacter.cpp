@@ -61,8 +61,7 @@ void ACPP_DemoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAxis("MoveForwardandBack", this, &ACPP_DemoCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveLeftandRight", this, &ACPP_DemoCharacter::MoveRight);
 
-	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACPP_DemoCharacter::StartCrouch);
-	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ACPP_DemoCharacter::StopCrouch);
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACPP_DemoCharacter::ToggleCrouch);
 }
 
 bool ACPP_DemoCharacter::CanBeSeenFrom(const FVector& ObserverLocation, FVector& OutSeenLocation, int32& NumberOfLoSChecksPerformed, float& OutSightStrength, const AActor* IgnoreActor) const
@@ -107,13 +106,10 @@ void ACPP_DemoCharacter::MoveRight(float value)
 	AddMovementInput(direction, value);
 }
 
-void ACPP_DemoCharacter::StartCrouch()
+void ACPP_DemoCharacter::ToggleCrouch()
 {
-	Crouch();
+	if (CanCrouch())
+		Crouch();
+	else
+		UnCrouch();
 }
-
-void ACPP_DemoCharacter::StopCrouch()
-{
-	UnCrouch();
-}
-

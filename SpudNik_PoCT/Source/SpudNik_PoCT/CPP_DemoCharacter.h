@@ -45,10 +45,7 @@ public:
 	void MoveRight(float value);
 
 	UFUNCTION()
-	void StartCrouch();
-
-	UFUNCTION()
-	void StopCrouch();
+	void ToggleCrouch();
 
 	UPROPERTY(EditDefaultsOnly, Category = Mesh)
 	UStaticMeshComponent *CharacterMesh;
@@ -61,4 +58,7 @@ public:
 
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	FVector socketOffset;
+
+//private:
+//	bool bShouldCrouch = false;
 };
