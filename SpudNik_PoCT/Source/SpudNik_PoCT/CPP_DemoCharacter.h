@@ -47,7 +47,7 @@ public:
 	UFUNCTION()
 	void ToggleCrouch();
 
-	UPROPERTY(EditDefaultsOnly, Category = Mesh)
+	UPROPERTY(EditDefaultsOnly, Category = Mesh, BlueprintReadWrite)
 	UStaticMeshComponent *CharacterMesh;
 
 	UPROPERTY(EditDefaultsOnly)
