@@ -70,6 +70,8 @@ void ACPP_DemoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAxis("MoveLeftandRight", this, &ACPP_DemoCharacter::MoveRight);
 
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACPP_DemoCharacter::ToggleCrouch);
+	PlayerInputComponent->BindAction("Hug", IE_Pressed, this, &ACPP_DemoCharacter::HugWall);
+	PlayerInputComponent->BindAction("Hug", IE_Released, this, &ACPP_DemoCharacter::UnHugWall);
 }
 
 bool ACPP_DemoCharacter::CanBeSeenFrom(const FVector& ObserverLocation, FVector& OutSeenLocation, int32& NumberOfLoSChecksPerformed, float& OutSightStrength, const AActor* IgnoreActor) const
@@ -104,14 +106,42 @@ bool ACPP_DemoCharacter::CanBeSeenFrom(const FVector& ObserverLocation, FVector&
 
 void ACPP_DemoCharacter::MoveForward(float value)
 {
-	FVector direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
-	AddMovementInput(direction, value);
+	FVector direction = FVector(0.0f);
+	
+	if (bIsHugging)
+	{
+		FVector position = GetActorLocation() + (hugAxis * value);
+		if (hugAxis.X != 0.0f && position.X <= highLimit.X && position.X >= lowLimit.X)
+		{
+			direction.X = hugAxis.X;
+			AddMovementInput(direction, value);
+		}
+	}
+	else
+	{
+		direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::X);
+		AddMovementInput(direction, value);
+	}
 }
 
 void ACPP_DemoCharacter::MoveRight(float value)
 {
-	FVector direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
-	AddMovementInput(direction, value);
+	FVector direction = FVector(0.0f);
+	
+	if (bIsHugging)
+	{
+		FVector position = GetActorLocation() + (hugAxis * value);
+		if (hugAxis.Y != 0.0f && position.Y <= highLimit.Y && position.Y >= lowLimit.Y)
+		{
+			direction.Y = hugAxis.Y;
+			AddMovementInput(direction, value);
+		}
+	}
+	else
+	{
+		direction = FRotationMatrix(Controller->GetControlRotation()).GetScaledAxis(EAxis::Y);
+		AddMovementInput(direction, value);
+	}
 }
 
 void ACPP_DemoCharacter::ToggleCrouch()
@@ -120,4 +150,41 @@ void ACPP_DemoCharacter::ToggleCrouch()
 		Crouch();
 	else
 		UnCrouch();
+}
+
+void ACPP_DemoCharacter::HugWall()
+{
+	if (bCanHug)
+		bIsHugging = true;
+}
+
+void ACPP_DemoCharacter::UnHugWall()
+{
+	if (bIsHugging)
+		bIsHugging = false;
+}
+
+void ACPP_DemoCharacter::EnableHug(FVector axis, FVector lowVector, FVector highVector)
+{
+	bCanHug = true;
+	hugAxis = axis;
+	SetLimits(lowVector, highVector);
+	hugAxis.Normalize(1.0f);
+	UE_LOG(LogTemp, Warning, TEXT("Hug Axis set to: %s"), *hugAxis.ToString());
+}
+
+void ACPP_DemoCharacter::DisableHug()
+{
+	bCanHug = false;
+}
+
+void ACPP_DemoCharacter::SetLimits(FVector left, FVector right)
+{
+	lowLimit.X = FMath::Min(left.X, right.X);
+	lowLimit.Y = FMath::Min(left.Y, right.Y);
+	lowLimit.Z = 0.0f;
+
+	highLimit.X = FMath::Max(left.X, right.X);
+	highLimit.Y = FMath::Max(left.Y, right.Y);
+	highLimit.Z = 0.0f;
 }

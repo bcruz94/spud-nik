@@ -47,6 +47,18 @@ public:
 	UFUNCTION()
 	void ToggleCrouch();
 
+	UFUNCTION()
+	void HugWall();
+
+	UFUNCTION()
+	void UnHugWall();
+
+	UFUNCTION(BlueprintCallable)
+	void EnableHug(FVector axis, FVector lowVector, FVector highVector);
+
+	UFUNCTION(BlueprintCallable)
+	void DisableHug();
+
 	UPROPERTY(EditDefaultsOnly, Category = Mesh, BlueprintReadWrite)
 	UStaticMeshComponent *CharacterMesh;
 
@@ -59,6 +71,12 @@ public:
 	UPROPERTY(EditAnyWhere, BlueprintReadWrite)
 	FVector socketOffset;
 
-//private:
-//	bool bShouldCrouch = false;
+private:
+	void SetLimits(FVector left, FVector right);
+
+	bool bCanHug = false;
+	bool bIsHugging = false;
+	FVector hugAxis;
+	FVector lowLimit;
+	FVector highLimit;
 };
